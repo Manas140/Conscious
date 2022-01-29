@@ -14,6 +14,12 @@
 <p align="center">
   <img src="./preview/minimal.png">
 </p>
+
+<details><summary>Other's</summary>
+- With UwU Nvim Colorscheme. 
+<p align="center">
+  <img src="./preview/uwu.png">
+</p>
 </details>
 
 # Why? A big one
@@ -84,6 +90,7 @@ vmap("<leader>,", ":!echo this is a visual map'")
 ```
 </details>
 
+# 
 # Special Thanks
 - [Mangeshrex](https://github.com/Mangeshrex) 
 
