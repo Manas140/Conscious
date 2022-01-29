@@ -17,7 +17,9 @@
 </details>
 
 <details><summary>Other's</summary>
-- With UwU Nvim Colorscheme. 
+
+- With <a href="https://github.com/Mangeshrex/uwu.vim">UwU vim</a> colorscheme. 
+
 <p align="center">
   <img src="./preview/uwu.png">
 </p>
