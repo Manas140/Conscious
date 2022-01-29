@@ -14,6 +14,7 @@
 <p align="center">
   <img src="./preview/minimal.png">
 </p>
+</details>
 
 <details><summary>Other's</summary>
 - With UwU Nvim Colorscheme. 
