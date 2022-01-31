@@ -1,26 +1,26 @@
 local api = vim.api
 
 local modes = {
-  ["n"] = " ",
-  ["no"] = " ",
-  ["v"] = " ",
-  ["V"] = " ",
-  [""] = " ",
-  ["s"] = "里",
-  ["S"] = "里",
-  [""] = "ﱵ ",
-  ["i"] = " ",
-  ["ic"] = " ",
-  ["R"] = "﯒ ",
-  ["Rv"] = "﯒ ",
-  ["c"] = " ",
-  ["cv"] = " ",
-  ["ce"] = " ",
-  ["r"] = " ",
+  ["n"] = "NORMAL",
+  ["no"] = "NORMAL",
+  ["v"] = "VISUAL",
+  ["V"] = "VISUAL LINE",
+  [""] = "VISUAL BLOCK",
+  ["s"] = "SELECT",
+  ["S"] = "SELECT LINE",
+  [""] = "SELECT BLOCK",
+  ["i"] = "INSERT",
+  ["ic"] = "INSERT",
+  ["R"] = "REPLACE",
+  ["Rv"] = "VISUAL REPLACE",
+  ["c"] = "COMMAND",
+  ["cv"] = "VIM EX",
+  ["ce"] = "EX",
+  ["r"] = "PROMPT",
   ["rm"] = "MOAR",
-  ["r?"] = "",
-  ["!"] = " ",
-  ["t"] = " ",
+  ["r?"] = "CONFIRM",
+  ["!"] = "SHELL",
+  ["t"] = "TERMINAL",
 }
 
 local function color()
@@ -30,7 +30,7 @@ local function color()
     mode_color = "%#StatusNormal#"
   elseif mode == "i" or mode == "ic" then
     mode_color = "%#StatusInsert#"
-  elseif mode == "v" or mode == "V" or mode == "" then
+  elseif mode == "v" or mode == "V" or mode == "" then
     mode_color = "%#StatusVisual#"
   elseif mode == "R" then
     mode_color = "%#StatusReplace#"
