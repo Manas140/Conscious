@@ -25,6 +25,7 @@ base16(paradise_dark, true)
 
 -- higlights
 vim.cmd [[
+  exe "hi StatusInactive guifg=".g:terminal_color_8 " guibg=".g:terminal_color_0
   exe "hi StatusNormal guifg=".g:terminal_color_0 " guibg=".g:terminal_color_2
   exe "hi StatusInsert guifg=".g:terminal_color_0 " guibg=".g:terminal_color_2
   exe "hi StatusReplace guifg=".g:terminal_color_0 " guibg=".g:terminal_color_1
