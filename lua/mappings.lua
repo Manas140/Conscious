@@ -10,14 +10,14 @@ end
 function minimal()
   if active then
     vim.cmd [[
-      set number relativenumber noshowmode showtabline=1 laststatus=2 signcolumn=yes foldcolumn=0 
-      au WinEnter,BufEnter, * set number relativenumber 
+      set number relativenumber noshowmode showtabline=1 laststatus=2 signcolumn=yes foldcolumn=0
+      au WinEnter,BufEnter, * set number relativenumber
     ]]
     active = false
-  else 
+  else
     vim.cmd [[
       set nonumber norelativenumber showmode showtabline=0 laststatus=0 signcolumn=no foldcolumn=1
-      au WinEnter,BufEnter, * set nonumber norelativenumber 
+      au WinEnter,BufEnter, * set nonumber norelativenumber
     ]]
     active = true
   end
@@ -38,8 +38,10 @@ nmap("<C-S>", ":w")
 -- Minimal toggle
 nmap("<leader>m", ":lua minimal()")
 
+-- Hard update
+nmap("<leader>u", ":tabnew | term cd $HOME/.config/nvim && git reset --hard HEAD && git pull")
+
 -- Telescope
-nmap("<leader>/", ":lua require('Comment.api').toggle_current_linewise()")
 nmap("<leader><space>", ":Telescope")
 nmap("ff", ":Telescope find_files")
 nmap("fb", ":Telescope buffers")
@@ -48,5 +50,7 @@ nmap("fb", ":Telescope buffers")
 nmap("<C-N>", ":NvimTreeToggle")
 nmap("<C-E>", ":NvimTreeFocus")
 
+-- Comment
+nmap("<leader>/", ":lua require('Comment.api').toggle_current_linewise()")
 -- Visual Map
 vmap("<leader>/", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())")

@@ -4,7 +4,7 @@
     <a href="https://github.com/Manas140/Conscious/stargazers"><img src="https://img.shields.io/github/stars/Manas140/Conscious?colorA=151515&colorB=B66467&style=for-the-badge"></a>
     <a href="https://github.com/Manas140/Conscious/issues"><img src="https://img.shields.io/github/issues/Manas140/Conscious?colorA=151515&colorB=8C977D&style=for-the-badge"></a>
     <a href="https://github.com/Manas140/Conscious/network/members"><img src="https://img.shields.io/github/forks/Manas140/Conscious?colorA=151515&colorB=D9BC8C&style=for-the-badge"></a>
-    <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=5b98a9&labelColor=1b2224&style=for-the-badge">
+    <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8DA3B9&labelColor=151515&style=for-the-badge">
 </p>
 
 <p align="center">
@@ -19,11 +19,12 @@
 
 <details><summary>Others</summary>
 
-- With <a href="https://github.com/Mangeshrex/uwu.vim">UwU vim</a> colorscheme. 
+- With <a href="https://github.com/Mangeshrex/uwu.vim">UwU vim</a> colorscheme.
 
 <p align="center">
   <img src="./preview/uwu.png">
 </p>
+
 </details>
 
 # Why? A big one
@@ -56,23 +57,23 @@ nvim +:PackerSync
 
 <details><summary>Keymaps</summary>
 
-|    Keybinds    |                Info               |
-| ;--------      |              :------;             |
-| Shift + Tab    |              Prev Tab             |
-| h + s          |          horizontal split         |
-| v + s          |            vertical split         |
-| Space + v      | Open a terminal in vertical split | 
-| Space + h      | Open a terminal in split          | 
-| Space + t      | New tab                           | 
-| Control + x    | Close Buffer                      | 
-| Control + s    | Write file                        | 
-| Space + m      | Toggle minimal mod                |
-| Space + /      | Toggle momment                    |   
-| Space + Space  | Open telescope                    | 
-| f + f          | Open telescope find_files         | 
-| f + b          | Open telescope find_buffer        |
-| Control + n    | Toggle Nvim tree                  | 
-| Control + e    | Focus Nvim tree                   |  
+  |    Keybinds    |                Info               |
+  | -----          | -----                             |
+  | Shift + Tab    | Prev Tab                          |
+  | h + s          | Open a horizontal split           |
+  | v + s          | Open a vertical split             |
+  | Space + v      | Open a terminal in vertical split |
+  | Space + h      | Open a terminal in split          |
+  | Space + t      | New tab                           |
+  | Control + x    | Close Buffer                      |
+  | Control + s    | Write file                        |
+  | Space + m      | Toggle minimal mode               |
+  | Space + /      | Toggle comment                    |
+  | Space + Space  | Open telescope                    |
+  | f + f          | Open telescope find_files         |
+  | f + b          | Open telescope find_buffer        |
+  | Control + n    | Toggle Nvim tree                  |
+  | Control + e    | Focus Nvim tree                   |
 
 </details>
 
@@ -80,7 +81,7 @@ nvim +:PackerSync
 
 <details><summary>Themeing</summary>
 <br>
-  
+
 > In $HOME/.config/nvim/lua/colors.lua/
 
 Create a base-16 theme
@@ -89,8 +90,8 @@ Create a base-16 theme
 local name = base16.theme_from_array {
   "131A1C"; "1b2224"; "232a2c"; "3c3e3e";
   "868888"; "d6d6d6"; "1f2123"; "161819";
-  "ef7cbb"; "e59e67"; "e7ac7e"; "6bb05d"; 
-  "5b98a9"; "7ab3c3"; "e74c4c"; "e74c4c"; 
+  "ef7cbb"; "e59e67"; "e7ac7e"; "6bb05d";
+  "5b98a9"; "7ab3c3"; "e74c4c"; "e74c4c";
 }
 ```
 Apply the theme
@@ -102,9 +103,9 @@ base16(name, true)
 
 <details><summary>Mapping</summary>
 <br>
-  
-> In $HOME/.config/nvim/lua/mappings.lua/ 
-  
+
+> In $HOME/.config/nvim/lua/mappings.lua/
+
 Add a map which works in `NORMAL` mode
 
 ```lua
@@ -119,4 +120,4 @@ vmap("<leader>,", ":!echo this is a visual map'")
 </details>
 
 # Special Thanks
-- [Mangeshrex](https://github.com/Mangeshrex) 
+- [Mangeshrex](https://github.com/Mangeshrex)
