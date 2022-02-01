@@ -56,10 +56,10 @@ nvim +:PackerSync
 
 <details><summary>Keymaps</summary>
 |   Keybinds     | Info     |
-| :------------  | :------: |
-|   Tab          |  Prev Tab|
+| -------------- | ------ |
+| Tab            | Prev Tab   |
 | Shift + Tab    | Prev tab |
-| h + s          |  horizontal split|
+| h + s          | horizontal split |
 | v + s          | vertical split |
 | Space + v      | Open a terminal in vertical split | 
 | Space + h      | Open a terminal in split | 
