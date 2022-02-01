@@ -55,24 +55,24 @@ nvim +:PackerSync
 # Usage
 
 <details><summary>Keymaps</summary>
-| Keybinds | Info |
-| ;--------; | ;----; |
-| Tab            | Prev Tab   |
-| Shift + Tab    | Prev tab |
-| h + s          | horizontal split |
-| v + s          | vertical split |
+|    Keybinds    |                Info               |
+| ;--------;     |              :------;             |
+| Tab            |              Prev Tab             | 
+| Shift + Tab    |              Prev Tab             |
+| h + s          |          horizontal split         |
+| v + s          |            vertical split         |
 | Space + v      | Open a terminal in vertical split | 
-| Space + h      | Open a terminal in split | 
-| Space + t      | New tab | 
-| Control + x    | Close Buffer | 
-| Control + s    | Write file | 
-| Space + m      | Toggle minimal mod |
-| Space + /      | Toggle momment | 
-| Space + Space  | Open telescope | 
-| f + f          | Open telescope find_files | 
-| f + b          | Open telescope find_buffer |
-| Control + n    | Toggle Nvim tree | 
-| Control + e    | Focus Nvim tree | 
+| Space + h      | Open a terminal in split          | 
+| Space + t      | New tab                           | 
+| Control + x    | Close Buffer                      | 
+| Control + s    | Write file                        | 
+| Space + m      | Toggle minimal mod                |
+| Space + /      | Toggle momment                    |   
+| Space + Space  | Open telescope                    | 
+| f + f          | Open telescope find_files         | 
+| f + b          | Open telescope find_buffer        |
+| Control + n    | Toggle Nvim tree                  | 
+| Control + e    | Focus Nvim tree                   |  
 
 </details>
 
