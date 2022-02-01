@@ -12,8 +12,7 @@ return require('packer').startup(function()
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   -- use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Just something one might use
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'numToStr/Comment.nvim' 
- 
+  use 'numToStr/Comment.nvim'
   -- Completion
   use 'hrsh7th/nvim-cmp'
   use 'saadparwaiz1/cmp_luasnip'
@@ -21,4 +20,3 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'kyazdani42/nvim-tree.lua'
 end)
-

@@ -65,7 +65,7 @@ end
 local present, luasnip = pcall(require, 'luasnip')
 if present then
   local present, friendly_snippets = pcall(require, 'luasnip.loaders.from_vscode')
-  if present then 
+  if present then
     friendly_snippets.load()
   end
 end

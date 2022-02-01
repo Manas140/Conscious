@@ -54,7 +54,7 @@ Statusline.active = function()
     "%=", -- right align
     " %Y ", -- file type
     color(), -- mode colors
-    " %l:%c " -- line, column 
+    " %l:%c " -- line, column
   }
 end
 
