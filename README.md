@@ -55,9 +55,9 @@ nvim +:PackerSync
 # Usage
 
 <details><summary>Keymaps</summary>
+
 |    Keybinds    |                Info               |
 | ;--------;     |              :------;             |
-| Tab            |              Prev Tab             | 
 | Shift + Tab    |              Prev Tab             |
 | h + s          |          horizontal split         |
 | v + s          |            vertical split         |
