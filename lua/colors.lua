@@ -25,14 +25,14 @@ base16(paradise_dark, true)
 
 -- higlights
 vim.cmd [[
-  exe "hi StatusInactive guibg=background guifg=".g:terminal_color_8 
-  exe "hi StatusNormal guifg=background guibg=".g:terminal_color_2
-  exe "hi StatusReplace guifg=background guibg=".g:terminal_color_1
-  exe "hi StatusInsert guifg=background guibg=".g:terminal_color_2
-  exe "hi StatusCommand guifg=background guibg=".g:terminal_color_3
-  exe "hi StatusVisual guifg=background guibg=".g:terminal_color_4
-  exe "hi StatusTerminal guifg=background guibg=".g:terminal_color_5
-
+  exe "hi StatusInactive guifg=".g:terminal_color_8 " guibg=".g:terminal_color_0
+  exe "hi StatusNormal guifg=".g:terminal_color_0 " guibg=".g:terminal_color_2
+  exe "hi StatusInsert guifg=".g:terminal_color_0 " guibg=".g:terminal_color_2
+  exe "hi StatusReplace guifg=".g:terminal_color_0 " guibg=".g:terminal_color_1
+  exe "hi StatusVisual guifg=".g:terminal_color_0 " guibg=".g:terminal_color_4
+  exe "hi StatusCommand guifg=".g:terminal_color_0 " guibg=".g:terminal_color_3
+  exe "hi StatusTerminal guifg=".g:terminal_color_0 " guibg=".g:terminal_color_5
+ 
   exe "hi NvimTreeGitDirty guifg=".g:terminal_color_1
   exe "hi NvimTreeGitNew guifg=".g:terminal_color_2
   exe "hi NvimTreeGitDeleted guifg=".g:terminal_color_1
