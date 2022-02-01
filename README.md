@@ -56,7 +56,7 @@ nvim +:PackerSync
 
 <details><summary>Keymaps</summary>
 | Keybinds | Info |
-| -------- | ---- |
+| ;--------; | ;----; |
 | Tab            | Prev Tab   |
 | Shift + Tab    | Prev tab |
 | h + s          | horizontal split |
@@ -73,6 +73,7 @@ nvim +:PackerSync
 | f + b          | Open telescope find_buffer |
 | Control + n    | Toggle Nvim tree | 
 | Control + e    | Focus Nvim tree | 
+
 </details>
 
 # Configuration
