@@ -50,7 +50,6 @@
   <img src="./preview/telescope.png">
 </p>
 </details>
-<br>
 
 # Installation
 Make a backup of previous config
