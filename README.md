@@ -21,10 +21,10 @@
   <img src="./preview/minimal.png">
 </p>
 
-- With <a href="https://github.com/Mangeshrex/uwu.vim">UwU vim</a> colorscheme.
+- With <a href="https://github.com/Mangeshrex/everblush.vim">Everblush.vim</a> colorscheme.
 
 <p align="center">
-  <img src="./preview/uwu.png">
+  <img src="https://raw.githubusercontent.com/Manas140/Conscious/main/preview/everblush-conscious.png"> 
 </p>
 </details>
 

@@ -9,7 +9,7 @@ local present, colors = pcall(require, "colors." .. theme)
 if present then
   base16.setup(colors)
 else  
-  vim.cmd("colorscheme base16-" .. theme)
+  vim.cmd("colorscheme base16-gruvbox" .. theme)
 end
 
 -- Highlights
