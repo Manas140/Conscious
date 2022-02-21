@@ -4,6 +4,7 @@ local opt = vim.opt
 g.mapleader = ' '
 
 -- basic
+opt.scrolloff = 3
 opt.mouse = 'a'
 opt.title = true
 opt.clipboard = 'unnamedplus'
@@ -29,10 +30,16 @@ opt.relativenumber = true
 opt.signcolumn = "yes"
 
 -- window, buffer, tabs
+opt.switchbuf = "newtab"
 opt.splitbelow = true
 opt.splitright = true
 opt.hidden = true
-opt.fillchars.vert = "│"
+opt.fillchars = {
+  vert = "│",
+  eob = " ",
+  diff = " ",
+  msgsep = " "
+}
 
 -- text formatting
 opt.expandtab = true

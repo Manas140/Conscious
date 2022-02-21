@@ -49,17 +49,19 @@ Statusline.active = function()
   return table.concat {
     color(), -- mode colors
     string.format(" %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
+    "%#StatusLineNC#", 
+    " %f ",
     "%#Normal#", -- middle color
-    " %f ", -- file name
     "%=", -- right align
+    "%#StatusLineNC#", 
     " %Y ", -- file type
     color(), -- mode colors
-    " %l:%c " -- line, column
+    " %l:%c ", -- line, column
   }
 end
 
 function Statusline.inactive()
-  return "%#StatusInactive# %f "
+  return "%#StatusInactive# %f"
 end
 
 function Statusline.short()
