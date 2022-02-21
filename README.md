@@ -24,7 +24,7 @@
 - With <a href="https://github.com/Mangeshrex/everblush.vim">Everblush.vim</a> colorscheme.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Manas140/Conscious/main/preview/everblush-conscious.png"> 
+  <img src="./preview/everblush-conscious.png"> 
 </p>
 </details>
 
