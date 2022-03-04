@@ -1,4 +1,10 @@
-require("indent_blankline").setup {
+local present, indent_blankline = pcall(require, "indent_blankline")
+
+if not present then 
+  return
+end
+
+indent_blankline.setup {
   char = "│",
   filetype_exclude = {
     "help",
@@ -7,5 +13,7 @@ require("indent_blankline").setup {
     "packer",
     "TelescopePrompt",
     "TelescopeResults",
+    "",
   },
+  buftype_exclude = { "terminal", "nofile" },
 }

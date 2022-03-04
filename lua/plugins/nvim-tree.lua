@@ -18,4 +18,4 @@ nvim_tree.setup {
   },
 }
 
-vim.g.nvim_tree_indent_markers = 1
+g.nvim_tree_indent_markers = 1

@@ -1,6 +1,3 @@
-local g = vim.g
-local opt = vim.opt
-
 g.mapleader = ' '
 
 -- basic
@@ -13,6 +10,7 @@ opt.undofile = true
 opt.cmdheight = 1
 opt.termguicolors = true
 opt.showmode = false
+opt.cul = true
 
 -- timeout stuff
 opt.updatetime = 300
@@ -23,7 +21,6 @@ opt.ttimeoutlen = 10
 -- status, tab, number, sign line
 opt.ruler = false
 opt.laststatus = 2
-opt.showtabline = 1
 opt.number = true
 opt.numberwidth = 1
 opt.relativenumber = true
