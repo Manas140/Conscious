@@ -1,5 +1,3 @@
-local api = vim.api
-
 local modes = {
   ["n"] = "NORMAL",
   ["no"] = "NORMAL",
@@ -49,11 +47,9 @@ Statusline.active = function()
   return table.concat {
     color(), -- mode colors
     string.format(" %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
-    "%#StatusLineNC#", 
-    " %f ",
     "%#Normal#", -- middle color
+    " %f ", -- file name
     "%=", -- right align
-    "%#StatusLineNC#", 
     " %Y ", -- file type
     color(), -- mode colors
     " %l:%c ", -- line, column
@@ -69,12 +65,9 @@ function Statusline.short()
 end
 
 -- Execute statusline
-vim.cmd([[
-  augroup Statusline
-  au!
-    au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline.active()
-    au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline.inactive()
-    au WinEnter,BufEnter,FileType NvimTree,terminal setlocal statusline=%!v:lua.Statusline.short()
-    au WinLeave,BufLeave,FileType NvimTree,terminal setlocal statusline=%!v:lua.Statusline.short()
-  augroup END
-]], false)
+vim.cmd [[
+  au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline.active()
+  au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline.inactive()
+  au WinEnter,BufEnter,FileType NvimTree*,terminal setlocal statusline=%!v:lua.Statusline.short()
+  au WinLeave,BufLeave,FileType NvimTree*,terminal setlocal statusline=%!v:lua.Statusline.short()
+]]

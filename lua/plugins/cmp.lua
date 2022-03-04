@@ -6,7 +6,7 @@ end
 
 local present, luasnip = pcall(require, "luasnip")
 
-vim.opt.completeopt = "menuone,noselect"
+opt.completeopt = "menuone,noselect"
 
 cmp.setup {
   mapping = {
@@ -23,7 +23,7 @@ cmp.setup {
     ["<Tab>"] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.api.nvim_get_mode().mode == "c" then
+      elseif api.nvim_get_mode().mode == "c" then
         fallback()
       else
         fallback()
@@ -32,7 +32,7 @@ cmp.setup {
     ["<S-Tab>"] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.api.nvim_get_mode().mode == "c" then
+      elseif api.nvim_get_mode().mode == "c" then
         fallback()
       else
         fallback()
@@ -43,10 +43,8 @@ cmp.setup {
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s", vim_item.kind)
       vim_item.menu = ({
-        nvim_lsp = "[LSP]",
         luasnip = "[Snip]",
         buffer = "[Buf]",
-        spell = "[Spl]",
         path = "[Path]",
         cmdline = "[Cmd]",
       })[entry.source.name]
@@ -54,10 +52,19 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
-    { name = "nvim_lua" },
     { name = "path" },
   },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
 }
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})

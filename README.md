@@ -1,6 +1,5 @@
 <h1 align="center">Conscious</h1>
 
-
 <p align="center">
     <a href="https://github.com/Manas140/Conscious/stargazers"><img src="https://img.shields.io/github/stars/Manas140/Conscious?colorA=151515&colorB=B66467&style=for-the-badge"></a>
     <a href="https://github.com/Manas140/Conscious/issues"><img src="https://img.shields.io/github/issues/Manas140/Conscious?colorA=151515&colorB=8C977D&style=for-the-badge"></a>
@@ -33,6 +32,11 @@
 - Bufferline
 <p align="center">
   <img src="./preview/bufferline.png">
+</p>
+
+- Cmp 
+<p align="center">
+  <img src="./preview/cmp.png">
 </p>
 
 - Packer

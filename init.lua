@@ -1,3 +1,9 @@
+fn = vim.fn
+api = vim.api
+cmd = vim.cmd
+opt = vim.opt
+g = vim.g
+
 _G.theme = "paradise-dark"
 
 local modules = {
@@ -16,6 +22,6 @@ for i, a in ipairs(modules) do
 end
 
 -- Auto commands
-vim.cmd [[
+cmd [[
   au TermOpen term://* setlocal nonumber norelativenumber signcolumn=no | setfiletype terminal
 ]]
