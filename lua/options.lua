@@ -23,7 +23,7 @@ opt.ruler = false
 opt.laststatus = 2
 opt.number = true
 opt.numberwidth = 1
-opt.relativenumber = true
+opt.relativenumber = false
 opt.signcolumn = "yes"
 
 -- window, buffer, tabs
@@ -32,7 +32,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.hidden = true
 opt.fillchars = {
-  vert = "│",
+  vert = " ",
   eob = " ",
   diff = " ",
   msgsep = " "

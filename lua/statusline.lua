@@ -23,7 +23,7 @@ local modes = {
 
 local function color()
   local mode = api.nvim_get_mode().mode
-  local mode_color = "%#Normal#"
+  local mode_color = "%#StatusLine#"
   if mode == "n" then
     mode_color = "%#StatusNormal#"
   elseif mode == "i" or mode == "ic" then
@@ -47,7 +47,7 @@ Statusline.active = function()
   return table.concat {
     color(), -- mode colors
     string.format(" %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
-    "%#Normal#", -- middle color
+    "%#StatusLine#", -- middle color
     " %f ", -- file name
     "%=", -- right align
     " %Y ", -- file type
@@ -57,11 +57,11 @@ Statusline.active = function()
 end
 
 function Statusline.inactive()
-  return "%#StatusInactive# %f"
+  return "%#StatusInactive# %f "
 end
 
 function Statusline.short()
-  return "%#Normal#"
+  return "%#StatusLine#"
 end
 
 -- Execute statusline

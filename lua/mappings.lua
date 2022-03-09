@@ -18,16 +18,14 @@ end
 
 function minimal()
   if active then
-    opt.number = true
-    opt.relativenumber = true
+    opt.number = true 
     opt.showmode = false
     opt.showtabline = 2
     opt.laststatus = 2
     opt.signcolumn = 'yes'
     opt.foldcolumn = '0'
   else
-    -- opt.number = false
-    opt.relativenumber = false
+    opt.number = false
     opt.showmode = true
     opt.showtabline = 0
     opt.laststatus = 0
@@ -49,15 +47,17 @@ nmap("<leader>h", ":split +terminal | startinsert")
 
 -- Save
 imap("<C-S>", "<ESC>:w<CR><Insert>")
-nmap("<C-S>", ":w<CR>")
+nmap("<C-S>", ":w")
 
-nmap("<leader>x", ":q")
+nmap("<leader>x", ":bd")
+nmap("<leader>s", ":w")
 
 nmap("<leader>t", ":enew")
 nmap("<ESC>", ":nohlsearch")
 
 -- Minimal toggle
 nmap("<leader>m", ":lua minimal()")
+nmap("<leader>n", ":set relativenumber!")
 
 -- Hard update
 nmap("<leader>u", ":tabnew | term cd $HOME/.config/nvim && git reset --hard HEAD && git pull")
@@ -65,7 +65,6 @@ nmap("<leader>u", ":tabnew | term cd $HOME/.config/nvim && git reset --hard HEAD
 -- Telescope
 nmap("<leader><space>", ":Telescope")
 nmap("ff", ":Telescope find_files")
-nmap("fb", ":Telescope buffers")
 
 -- NvimTree
 nmap("<C-N>", ":NvimTreeToggle")

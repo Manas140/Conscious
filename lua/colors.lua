@@ -13,33 +13,36 @@ else
 end
 
 -- Highlights
-function hl(highlight, fg, bg)
+local function hl(highlight, fg, bg)
   if fg == nil then fg = "none" end
   if bg == nil then bg = "none" end
   cmd("hi " .. highlight .. " guifg=" .. fg .. " guibg=" .. bg)
 end
 
 -- Status Line
+hl("StatusLine")
+hl("StatusNormal")
+hl("StatusLineNC", colors.base03)
 hl("StatusInactive", colors.base03)
-hl("StatusLineNC", nil, colors.base01)
-hl("StatusLine", nil, colors.base01)
-hl("StatusNormal", colors.base00, colors.base05)
-hl("StatusReplace", colors.base00, colors.base08)
-hl("StatusInsert", colors.base00, colors.base0B)
-hl("StatusCommand", colors.base00, colors.base0A)
-hl("StatusVisual", colors.base00, colors.base0D)
-hl("StatusTerminal", colors.base00, colors.base0E)
+hl("StatusReplace", colors.base08)
+hl("StatusInsert", colors.base0B)
+hl("StatusCommand", colors.base0A)
+hl("StatusVisual", colors.base0D)
+hl("StatusTerminal", colors.base0E)
 
 -- Nvim Tree
-hl("NvimTreeFolderIcon", colors.base0D)
+hl("NvimTreeFolderName")
+hl("NvimTreeOpenedFolderName")
+hl("NvimTreeEmptyFolderName")
+hl("NvimTreeFolderIcon", colors.base03)
 hl("NvimTreeGitDirty", colors.base08)
 hl("NvimTreeGitNew", colors.base0B)
 hl("NvimTreeGitDeleted", colors.base08)
 hl("NvimTreeGitRenamed", colors.base0A)
 hl("NvimTreeGitExecFile", colors.base0B)
 hl("NvimTreeSpecialFile", colors.base0E)
-hl("NvimTreeGitImageFile", colors.base0C)
-hl("NvimTreeWindowPicker", colors.base00, colors.base0B)
+hl("NvimTreeImageFile", colors.base0C)
+hl("NvimTreeWindowPicker", colors.base00, colors.base05)
 hl("NvimTreeIndentMarker", colors.base03)
 
 -- Telescope
@@ -49,10 +52,10 @@ hl("TelescopePromptPrefix", colors.base08, colors.base01)
 hl("TelescopeSelection", nil, colors.base01)
 
 -- Menu
-hl("Pmenu", nil, colors.base00)
-hl("PmenuSbar", colors.base00, colors.base00)
+hl("Pmenu")
+hl("PmenuSbar", colors.base00)
 hl("PmenuSel", colors.base00, colors.base05)
-hl("PmenuThumb", colors.base02, colors.base02)
+hl("PmenuThumb", colors.base00)
 
 -- CMP
 hl("CmpItemAbbrMatch", colors.base05)
@@ -61,9 +64,9 @@ hl("CmpItemAbbr", colors.base03)
 hl("CmpItemKind", colors.base0E)
 
 -- Number
-hl("LineNr", colors.base03)
 hl("CursorLine")
-hl("CursorLineNR", colors.base05)
+hl("CursorLineNR")
+hl("LineNr", colors.base03)
 
 -- Others
 hl("VertSplit", colors.base01)
