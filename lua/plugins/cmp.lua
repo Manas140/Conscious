@@ -4,8 +4,6 @@ if not present then
   return
 end
 
-local present, luasnip = pcall(require, "luasnip")
-
 opt.completeopt = "menuone,noselect"
 
 cmp.setup {
@@ -58,13 +56,28 @@ cmp.setup {
   },
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      local present, luasnip = pcall(require, "luasnip")
+      if present then 
+        luasnip.lsp_expand(args.body)
+      end
     end,
   },
 }
 
 cmp.setup.cmdline('/', {
   sources = {
-    { name = 'buffer' }
+    { name = 'buffer'}
   }
+})
+
+cmp.setup.cmdline("?", {
+  sources = {
+    { name = "buffer"},
+  },
+})
+
+cmp.setup.cmdline(":", {
+  sources = {
+    { name = "cmdline", keyword_length = 2 },
+  },
 })

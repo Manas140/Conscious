@@ -14,7 +14,7 @@ nvim_tree.setup {
   hijack_cursor = true,
   update_cwd = true,
   update_to_buf_dir = {
-    auto_open = false,
+    auto_open = true,
   },
 }
 

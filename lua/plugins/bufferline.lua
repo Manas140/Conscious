@@ -11,6 +11,7 @@ end
 
 bufferline.setup {
   options = {
+    offsets = { { filetype = "NvimTree", text = "" } },
     separator_style = { "", ""},
     show_tab_indicators = false,
   },
@@ -70,7 +71,7 @@ bufferline.setup {
 
     -- tabs
     tab_close = {
-      guifg = colors.base08,
+      guifg = colors.base00,
       guibg = colors.base00,
     },
   },

@@ -32,6 +32,7 @@ require('packer').startup {
     }
     use {
       'nvim-treesitter/nvim-treesitter',
+      requires = { 'nathom/filetype.nvim' },
       config = function()
         require('plugins.treesitter')
       end
@@ -75,7 +76,7 @@ require('packer').startup {
     }
     use {
       'hrsh7th/nvim-cmp',
-      requires = { 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path'},
+      requires = { 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline'},
       config = function()
         require('plugins.cmp')
       end,

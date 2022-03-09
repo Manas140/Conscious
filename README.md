@@ -1,58 +1,48 @@
 <h1 align="center">Conscious</h1>
 
 <p align="center">
-    <a href="https://github.com/Manas140/Conscious/stargazers"><img src="https://img.shields.io/github/stars/Manas140/Conscious?colorA=151515&colorB=B66467&style=for-the-badge"></a>
-    <a href="https://github.com/Manas140/Conscious/issues"><img src="https://img.shields.io/github/issues/Manas140/Conscious?colorA=151515&colorB=8C977D&style=for-the-badge"></a>
-    <a href="https://github.com/Manas140/Conscious/network/members"><img src="https://img.shields.io/github/forks/Manas140/Conscious?colorA=151515&colorB=D9BC8C&style=for-the-badge"></a>
-    <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8DA3B9&labelColor=151515&style=for-the-badge">
+  <a href="https://github.com/Manas140/Conscious/stargazers"><img src="https://img.shields.io/github/stars/Manas140/Conscious?colorA=151515&colorB=B66467&style=for-the-badge"></a>
+  <a href="https://github.com/Manas140/Conscious/issues"><img src="https://img.shields.io/github/issues/Manas140/Conscious?colorA=151515&colorB=8C977D&style=for-the-badge"></a>
+  <a href="https://github.com/Manas140/Conscious/network/members"><img src="https://img.shields.io/github/forks/Manas140/Conscious?colorA=151515&colorB=D9BC8C&style=for-the-badge"></a>
+  <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8DA3B9&labelColor=151515&style=for-the-badge">
 </p>
 
 # Features
 
 <details><summary>Showcase</summary>
-<p align="center">
-  <img src="./preview/normal.png">
-</p>
+<img src="./preview/normal.png">
 
 - Minimal Mode
 
-<p align="center">
-  <img src="./preview/minimal.png">
-</p>
+<img src="./preview/minimal.png">
 
 - With <a href="https://github.com/Mangeshrex/everblush.vim">Everblush.vim</a> colorscheme.
 
-<p align="center">
-  <img src="./preview/everblush-conscious.png"> 
-</p>
+<img src="./preview/everblush-conscious.png"> 
 </details>
 
 <details><summary>Plugins</summary>
 
 - Bufferline
-<p align="center">
-  <img src="./preview/bufferline.png">
-</p>
 
-- Cmp 
-<p align="center">
-  <img src="./preview/cmp.png">
-</p>
+<img src="./preview/bufferline.png">
+
+- Cmp & Snippets
+
+<img src="./preview/cmp.png">
 
 - Packer
-<p align="center">
-  <img src="./preview/packer.png">
-</p>
+
+<img src="./preview/packer.png">
 
 - Nvim-Tree
-<p align="center">
-  <img src="./preview/nvim-tree.png">
-</p>
+
+<img src="./preview/nvim-tree.png">
 
 - Telescope
-<p align="center">
-  <img src="./preview/telescope.png">
-</p>
+
+<img src="./preview/telescope.png">
+
 </details>
 
 # Installation
@@ -69,7 +59,7 @@ git clone https://github.com/Manas140/Conscious.git $HOME/.config/nvim
 Install it
 
 ```sh
-nvim +:PackerSync
+nvim +PackerSync
 ```
 
 # Usage
@@ -116,6 +106,7 @@ Add a map which works in `VISUAL` mode
 ```lua
 vmap("<leader>,", ":!echo this is a visual map")
 ```
+
 </details>
 
 <details><summary>Colors</summary>
@@ -134,9 +125,9 @@ vmap("<leader>,", ":!echo this is a visual map")
 return {
   base00 = "#151515",
   base01 = "#1f1f1f",
-  base02 = "#282828",
-  base03 = "#3b3b3b",
-  base04 = "#e8e3e3",
+  base02 = "#2e2e2e",
+  base03 = "#424242",
+  base04 = "#bbb6b6",
   base05 = "#e8e3e3",
   base06 = "#e8e3e3",
   base07 = "#e8e3e3",
@@ -144,6 +135,10 @@ return {
   base09 = "#d9bc8c",
   base0A = "#d9bc8c",
   base0B = "#8c977d",
+  base0C = "#8aa6a2",
+  base0D = "#8da3b9",
+  base0E = "#a988b0",
+  base0F = "#bbb6b6",
 }
 ```
 
