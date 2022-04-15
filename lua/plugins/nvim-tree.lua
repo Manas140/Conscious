@@ -16,6 +16,14 @@ nvim_tree.setup {
   update_to_buf_dir = {
     auto_open = true,
   },
+  renderer = {
+    indent_markers = {
+      enable = true,
+    },
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 400,
+  },
 }
-
-g.nvim_tree_indent_markers = 1
