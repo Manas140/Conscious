@@ -1,18 +1,22 @@
 local theme = _G.theme
 
 local present, base16 = pcall(require, "base16-colorscheme")
-if not present then
-  return
-end
+if not present then return end
 
-local present, colors = pcall(require, "colors." .. theme)
+local present, color = pcall(require, "colors." .. theme)
 if present then
-  base16.setup(colors)
-else  
-  cmd("colorscheme base16-" .. theme)
+  base16.setup(color)
+else 
+  local ok, err = pcall(cmd, ("colorscheme base16-" .. theme))
+  if not ok then
+    _G.theme = "paradise-dark"
+    color = require("colors." .. _G.theme)
+    base16.setup(color)
+    print(err)
+  end
 end
 
--- Highlights
+-- Highlights 
 local function hl(highlight, fg, bg)
   if fg == nil then fg = "none" end
   if bg == nil then bg = "none" end
@@ -22,51 +26,54 @@ end
 -- Status Line
 hl("StatusLine")
 hl("StatusNormal")
-hl("StatusLineNC", colors.base03)
-hl("StatusInactive", colors.base03)
-hl("StatusReplace", colors.base08)
-hl("StatusInsert", colors.base0B)
-hl("StatusCommand", colors.base0A)
-hl("StatusVisual", colors.base0D)
-hl("StatusTerminal", colors.base0E)
+hl("StatusLineNC", color.base03)
+hl("StatusInactive", color.base03)
+hl("StatusReplace", color.base08)
+hl("StatusInsert", color.base0B)
+hl("StatusCommand", color.base0A)
+hl("StatusVisual", color.base0D)
+hl("StatusTerminal", color.base0E)
 
 -- Nvim Tree
 hl("NvimTreeFolderName")
 hl("NvimTreeOpenedFolderName")
 hl("NvimTreeEmptyFolderName")
-hl("NvimTreeFolderIcon", colors.base03)
-hl("NvimTreeGitDirty", colors.base08)
-hl("NvimTreeGitNew", colors.base0B)
-hl("NvimTreeGitDeleted", colors.base08)
-hl("NvimTreeGitRenamed", colors.base0A)
-hl("NvimTreeGitExecFile", colors.base0B)
-hl("NvimTreeSpecialFile", colors.base0E)
-hl("NvimTreeImageFile", colors.base0C)
-hl("NvimTreeWindowPicker", colors.base00, colors.base05)
-hl("NvimTreeIndentMarker", colors.base03)
+hl("NvimTreeFolderIcon", color.base03)
+hl("NvimTreeGitDirty", color.base08)
+hl("NvimTreeGitNew", color.base0B)
+hl("NvimTreeGitDeleted", color.base08)
+hl("NvimTreeGitRenamed", color.base0A)
+hl("NvimTreeGitExecFile", color.base0B)
+hl("NvimTreeSpecialFile", color.base0E)
+hl("NvimTreeImageFile", color.base0C)
+hl("NvimTreeWindowPicker", color.base05, color.base01)
+hl("NvimTreeIndentMarker", color.base03)
 
 -- Telescope
-hl("TelescopePromptBorder", colors.base01, colors.base01)
-hl("TelescopePromptNormal", nil, colors.base01)
-hl("TelescopePromptPrefix", colors.base08, colors.base01)
-hl("TelescopeSelection", nil, colors.base01)
+hl("TelescopePromptBorder", color.base01, color.base01)
+hl("TelescopePromptNormal", nil, color.base01)
+hl("TelescopePromptPrefix", color.base08, color.base01)
+hl("TelescopeSelection", nil, color.base01)
+
 
 -- Menu
-hl("Pmenu")
-hl("PmenuSbar", colors.base00)
-hl("PmenuSel", colors.base00, colors.base05)
-hl("PmenuThumb", colors.base00)
+hl("Pmenu", nil, color.base01)
+hl("PmenuSbar", nil, color.base01)
+hl("PmenuThumb", nil, color.base01)
+hl("PmenuSel", nil, color.base02)
 
 -- CMP
-hl("CmpItemAbbrMatch", colors.base05)
-hl("CmpItemAbbrMatchFuzzy", colors.base05)
-hl("CmpItemAbbr", colors.base03)
-hl("CmpItemKind", colors.base0E)
+hl("CmpItemAbbrMatch", color.base05)
+hl("CmpItemAbbrMatchFuzzy", color.base05)
+hl("CmpItemAbbr", color.base03)
+hl("CmpItemKind", color.base0E)
+hl("CmpItemMenu", color.base0E)
 
 -- Number
 hl("CursorLine")
 hl("CursorLineNR")
-hl("LineNr", colors.base03)
+hl("LineNr", color.base03)
 
 -- Others
-hl("VertSplit", colors.base01)
+hl("NormalFloat", nil, color.base01)
+hl("FloatBorder", color.base01, color.base01)

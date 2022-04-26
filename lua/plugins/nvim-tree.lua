@@ -13,17 +13,28 @@ nvim_tree.setup {
   disable_netrw = true,
   hijack_cursor = true,
   update_cwd = true,
-  update_to_buf_dir = {
-    auto_open = true,
-  },
   renderer = {
     indent_markers = {
       enable = true,
     },
+    icons = {
+      webdev_colors = false,
+    },
+  },
+  hijack_directories = {
+    enable = true,
+    auto_open = true,
   },
   git = {
     enable = true,
     ignore = false,
     timeout = 400,
   },
+}
+
+g.nvim_tree_show_icons = {
+  git = 1,
+  folders = 1,
+  files = 0,
+  folder_arrows = 0,
 }

@@ -7,64 +7,43 @@
   <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8DA3B9&labelColor=151515&style=for-the-badge">
 </p>
 
-# Features
+## ShowCase
 
-<details><summary>Showcase</summary>
-<img src="./preview/normal.png">
+![](./preview.png) 
 
-- Minimal Mode
+### Plugins
 
-<img src="./preview/minimal.png">
+- [autopairs](https://github.com/windwp/nvim-autopairs)
+- [bufferline](https://github.com/akinsho/bufferline.nvim)
+- [Comment](https://github.com/numToStr/Comment.nvim)
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
+- [nvim-tree](https://kyazdani42/nvim-tree.lua)
+- [telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-- With <a href="https://github.com/Mangeshrex/everblush.vim">Everblush.vim</a> colorscheme.
-
-<img src="./preview/everblush-conscious.png"> 
-</details>
-
-<details><summary>Plugins</summary>
-
-- Bufferline
-
-<img src="./preview/bufferline.png">
-
-- Cmp & Snippets
-
-<img src="./preview/cmp.png">
-
-- Packer
-
-<img src="./preview/packer.png">
-
-- Nvim-Tree
-
-<img src="./preview/nvim-tree.png">
-
-- Telescope
-
-<img src="./preview/telescope.png">
-
-</details>
-
-# Installation
-Make a backup of previous config
+## Setup
+- Make a backup of previous config
 
 ```sh
 [ -d $HOME/.config/nvim ] && mv $HOME/.config/nvim nvim.old
 ```
-Clone the repo
+- Clone the repo
 
 ```sh
 git clone https://github.com/Manas140/Conscious.git $HOME/.config/nvim
 ```
-Install it
+- Install it
 
 ```sh
 nvim +PackerSync
 ```
 
-# Usage
-
-<details><summary>Mappings</summary>
+## Keybinds
 
   |    Keybinds    |                Info               |
   | -----          | -----                             |
@@ -81,76 +60,9 @@ nvim +PackerSync
   | Space + /      | Toggle comment                    |
   | Space + Space  | Open telescope                    |
   | f + f          | Open telescope find_files         |
-  | f + b          | Open telescope find_buffer        |
   | Control + n    | Toggle Nvim tree                  |
   | Control + b    | Focus Nvim tree                   |
   | Space + h      | Hard Update                       |
 
-</details>
-
-# Configuration
-
-<details><summary>Mapping</summary>
-<br>
-
-> `$HOME/.config/nvim/lua/mappings.lua/`
-
-Add a map which works in `NORMAL` mode
-
-```lua
-nmap("<leader>,", ":!echo this is a normal map")
-```
-
-Add a map which works in `VISUAL` mode
-
-```lua
-vmap("<leader>,", ":!echo this is a visual map")
-```
-
-</details>
-
-<details><summary>Colors</summary>
-<br>
-
-> `$HOME/.config/nvim/lua/colors/`
-
-- Add a file named `<colorscheme>.lua`
-
-> `$HOME/.config/nvim/lua/colors/<colorscheme>.lua`
-
-- Add colors according to base16 rules
-
-> Example
-```lua
-return {
-  base00 = "#151515",
-  base01 = "#1f1f1f",
-  base02 = "#2e2e2e",
-  base03 = "#424242",
-  base04 = "#bbb6b6",
-  base05 = "#e8e3e3",
-  base06 = "#e8e3e3",
-  base07 = "#e8e3e3",
-  base08 = "#b66467",
-  base09 = "#d9bc8c",
-  base0A = "#d9bc8c",
-  base0B = "#8c977d",
-  base0C = "#8aa6a2",
-  base0D = "#8da3b9",
-  base0E = "#a988b0",
-  base0F = "#bbb6b6",
-}
-```
-
-> $HOME/.config/nvim/init.lua
-
-- Specify the theme
-
-```lua
-_G.theme = "<colorscheme>"
-```
-
-</details>
-
-# Special Thanks
+## Special Thanks
 - [Mangeshrex](https://github.com/Mangeshrex)
