@@ -3,7 +3,7 @@ if not present then
   return
 end
 
-local present, colors = pcall(require, "colors." .. _G.theme)
+local present, color = pcall(require, "colors." .. _G.theme)
 
 if not present then
   return
@@ -17,62 +17,62 @@ bufferline.setup {
   },
   highlights = {
     fill = {
-      guifg = colors.base00,
-      guibg = colors.base00,
+      guifg = color.base00,
+      guibg = color.base00,
     },
     background = {
-      guifg = colors.base03,
-      guibg = colors.base00,
+      guifg = color.base03,
+      guibg = color.base00,
     },
 
     -- buffers
     buffer_selected = {
-      guifg = colors.base05,
-      guibg = colors.base00,
+      guifg = color.base05,
+      guibg = color.base00,
       gui = "bold",
     },
     buffer_visible = {
-      guifg = colors.base03,
-      guibg = colors.base00,
+      guifg = color.base03,
+      guibg = color.base00,
     },
 
     -- close buttons
     close_button = {
-      guifg = colors.base03,
-      guibg = colors.base00,
+      guifg = color.base03,
+      guibg = color.base00,
     },
     close_button_visible = {
-      guifg = colors.base03,
-      guibg = colors.base00,
+      guifg = color.base03,
+      guibg = color.base00,
     },
     close_button_selected = {
-      guifg = colors.base08,
-      guibg = colors.base00,
+      guifg = color.base08,
+      guibg = color.base00,
     },
 
     indicator_selected = {
-      guifg = colors.base00,
-      guibg = colors.base00,
+      guifg = color.base00,
+      guibg = color.base00,
     },
     
     -- modified
     modified = {
-      guifg = colors.base03,
-      guibg = colors.base00,
+      guifg = color.base03,
+      guibg = color.base00,
     },
     modified_visible = {
-      guifg = colors.base00,
-      guibg = colors.base00,
+      guifg = color.base00,
+      guibg = color.base00,
     },
     modified_selected = {
-      guifg = colors.base0B,
-      guibg = colors.base00,
+      guifg = color.base0B,
+      guibg = color.base00,
     },
 
     -- tabs
     tab_close = {
-      guifg = colors.base00,
-      guibg = colors.base00,
+      guifg = color.base00,
+      guibg = color.base00,
     },
   },
 }

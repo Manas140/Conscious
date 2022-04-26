@@ -1,21 +1,12 @@
-active = false
-
 function hl(highlight, fg, bg)
   cmd("hi " .. highlight .. " guifg=" .. fg .. " guibg=" .. bg)
 end
 
-function nmap(keys, command)
-  api.nvim_set_keymap("n", keys, command .. " <CR>", { noremap = true, silent = true })
+function map(mode, keys, command)
+  api.nvim_set_keymap(mode, keys, command, { noremap = true, silent = true })
 end
 
-function vmap(keys, command)
-  api.nvim_set_keymap("v", keys, command .. " <CR>", { noremap = true, silent = true })
-end
-
-function imap(keys, command)
-  api.nvim_set_keymap("i", keys, command, { noremap = true, silent = true })
-end
-
+active = false
 function minimal()
   if active then
     opt.number = true 
@@ -36,44 +27,47 @@ function minimal()
 end
 
 -- Normal Map
-nmap("<TAB>", ":bnext")
-nmap("<S-TAB>", ":bprev")
-nmap("hs", ":split")
-nmap("vs", ":vs")
+map("n", "<TAB>", ":bnext<CR>")
+map("n", "<S-TAB>", ":bprev<CR>")
+map("n", "hs", ":split<CR>")
+map("n", "vs", ":vs<CR>")
 
 -- Terminal
-nmap("<leader>v", ":vs +terminal | startinsert")
-nmap("<leader>h", ":split +terminal | startinsert")
+map("n", "<leader>v", ":vs +terminal | startinsert<CR>")
+map("n", "<leader>h", ":split +terminal | startinsert<CR>")
 
 -- Save
-imap("<C-S>", "<ESC>:w<CR><Insert>")
-nmap("<C-S>", ":w")
+map("i", "<C-S>", "<ESC>:w<CR><Insert>")
+map("n", "<C-S>", ":w<CR>")
 
-nmap("<leader>x", ":bd")
-nmap("<leader>s", ":w")
-
-nmap("<leader>t", ":enew")
-nmap("<ESC>", ":nohlsearch")
+-- Buffer
+map("n", "<leader>x", ":bd<CR>")
+map("n", "<leader>s", ":w<CR>")
+map("n", "<leader>t", ":enew<CR>")
+map("n", "<ESC>", ":nohlsearch<CR>")
 
 -- Minimal toggle
-nmap("<leader>m", ":lua minimal()")
-nmap("<leader>n", ":set relativenumber!")
+map("n", "<leader>m", ":lua minimal()<CR>")
+map("n", "<leader>n", ":set relativenumber!<CR>")
 
 -- Hard update
-nmap("<leader>u", ":tabnew | term cd $HOME/.config/nvim && git reset --hard HEAD && git pull")
+map("n", "<leader>u", ":tabnew | term cd $HOME/.config/nvim && git reset --hard HEAD && git pull<CR>")
 
 -- Telescope
-nmap("<leader><space>", ":Telescope")
-nmap("ff", ":Telescope find_files")
+map("n", "<leader><space>", ":Telescope<CR>")
+map("n", "ff", ":Telescope find_files<CR>")
 
 -- NvimTree
-nmap("<C-N>", ":NvimTreeToggle")
-nmap("<C-B>", ":NvimTreeFocus")
+map("n", "<C-N>", ":NvimTreeToggle<CR>")
+map("n", "<C-B>", ":NvimTreeFocus<CR>")
 
 -- Comment
-nmap("<leader>/", ":lua require('Comment.api').toggle_current_linewise()")
-vmap("<leader>/", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())")
+map("n", "<leader>/", ":lua require('Comment.api').toggle_current_linewise()<CR>")
+map("v", "<leader>/", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>")
 
 -- Insert Map
-imap("<C-E>" , "<End>")
-imap("<C-A>" , "<Home>")
+map("i", "<C-E>", "<End>")
+map("i", "<C-A>", "<Home>")
+
+-- Shift tab
+map("i", "<S-TAB>", "<<<CR>")
