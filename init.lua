@@ -22,6 +22,7 @@ for i, a in ipairs(modules) do
 end
 
 -- Auto commands
-cmd [[
-  au TermOpen term://* setlocal nonumber norelativenumber signcolumn=no | setfiletype terminal
-]]
+api.nvim_create_autocmd("TermOpen", {
+  pattern = "term://*",
+  command = "setlocal nonumber norelativenumber signcolumn=no | setfiletype terminal",
+})

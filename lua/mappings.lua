@@ -9,7 +9,7 @@ end
 active = false
 function minimal()
   if active then
-    opt.number = true 
+    opt.number = true
     opt.showmode = false
     opt.showtabline = 2
     opt.laststatus = 2
@@ -17,6 +17,7 @@ function minimal()
     opt.foldcolumn = '0'
   else
     opt.number = false
+    opt.relativenumber = false
     opt.showmode = true
     opt.showtabline = 0
     opt.laststatus = 0
@@ -70,4 +71,4 @@ map("i", "<C-E>", "<End>")
 map("i", "<C-A>", "<Home>")
 
 -- Shift tab
-map("i", "<S-TAB>", "<<<CR>")
+map("i", "<S-TAB>", "<ESC><<<Ins>")

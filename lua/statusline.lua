@@ -41,9 +41,7 @@ local function color()
 end
 
 -- StatusLine Modes
-Statusline = {}
-
-Statusline.active = function()
+Status = function()
   return table.concat {
     color(), -- mode colors
     string.format(" %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
@@ -56,18 +54,21 @@ Statusline.active = function()
   }
 end
 
-function Statusline.inactive()
-  return "%#StatusInactive# %f "
-end
-
-function Statusline.short()
-  return "%#StatusLine#"
-end
 
 -- Execute statusline
-vim.cmd [[
-  au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline.active()
-  au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline.inactive()
-  au WinEnter,BufEnter,FileType NvimTree*,terminal setlocal statusline=%!v:lua.Statusline.short()
-  au WinLeave,BufLeave,FileType NvimTree*,terminal setlocal statusline=%!v:lua.Statusline.short()
-]]
+api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
+  pattern = "*",
+  command = "setlocal statusline=%!v:lua.Status()", 
+})
+api.nvim_create_autocmd({"WinLeave", "BufLeave"}, {
+  pattern = "*",
+  callback = function() 
+    opt.statusline = "%#StatusInactive# %f "
+  end,
+})
+api.nvim_create_autocmd({"WinEnter", "BufEnter", "WinLeave" , "BufLeave", "FileType"}, {
+  pattern = {"NvimTree*", "terminal"},
+  callback = function()
+    opt.statusline = "%#StatusLine#"
+  end,
+})

@@ -19,6 +19,12 @@ nvim_tree.setup {
     },
     icons = {
       webdev_colors = false,
+      show = {
+        file = false,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
     },
   },
   hijack_directories = {
