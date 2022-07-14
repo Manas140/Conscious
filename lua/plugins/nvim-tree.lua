@@ -22,7 +22,7 @@ nvim_tree.setup {
       show = {
         file = false,
         folder = true,
-        folder_arrow = true,
+        folder_arrow = false,
         git = true,
       },
     },
@@ -36,11 +36,4 @@ nvim_tree.setup {
     ignore = false,
     timeout = 400,
   },
-}
-
-g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 0,
-  folder_arrows = 0,
 }
