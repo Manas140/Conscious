@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=8DA3B9&labelColor=151515&style=for-the-badge">
 </p>
 
-## ShowCase
+## Showcase
 
 ![](./preview.png) 
 

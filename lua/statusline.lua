@@ -1,24 +1,52 @@
 local modes = {
-  ["n"] = "NORMAL",
-  ["no"] = "NORMAL",
-  ["v"] = "VISUAL",
-  ["V"] = "VISUAL LINE",
-  [""] = "VISUAL BLOCK",
-  ["s"] = "SELECT",
-  ["S"] = "SELECT LINE",
-  [""] = "SELECT BLOCK",
-  ["i"] = "INSERT",
-  ["ic"] = "INSERT",
-  ["R"] = "REPLACE",
-  ["Rv"] = "VISUAL REPLACE",
-  ["c"] = "COMMAND",
-  ["cv"] = "VIM EX",
-  ["ce"] = "EX",
-  ["r"] = "PROMPT",
-  ["rm"] = "MOAR",
-  ["r?"] = "CONFIRM",
-  ["!"] = "SHELL",
-  ["t"] = "TERMINAL",
+  ['n']    = ' ',
+  ['no']   = ' ',
+  ['nov']  = ' ',
+  ['noV']  = ' ',
+  ['no'] = ' ',
+  ['niI']  = ' ',
+  ['niR']  = ' ',
+  ['niV']  = ' ',
+
+  ['i']   = ' ',
+  ['ic']  = ' ',
+  ['ix']  = ' ',
+  ['s']   = ' ',
+  ['S']   = ' ',
+
+  ['v']   = ' ',
+  ['V']   = ' ',
+  ['']  = ' ',
+  ['r']   = '﯒ ',
+  ['r?']  = ' ',
+  ['c']   = ' ',
+  ['t']   = ' ',
+  ['!']   = ' ',
+  ['R']   = ' ',
+}
+
+local icons = {
+  ['typescript']         = ' ' ,
+  ['python']             = ' ' ,
+  ['java']               = ' ' ,
+  ['html']               = ' ' ,
+  ['css']                = ' ' ,
+  ['scss']               = ' ' ,
+  ['javascript']         = ' ' ,
+  ['javascriptreact']    = ' ' ,
+  ['markdown']           = ' ' ,
+  ['sh']                 = ' ',
+  ['zsh']                = ' ',
+  ['vim']                = ' ',
+  ['rust']               = ' ',
+  ['cpp']                = ' ',
+  ['c']                  = ' ',
+  ['go']                 = ' ',
+  ['lua']                = ' ',
+  ['conf']               = ' ',
+  ['haskel']             = ' ',
+  ['ruby']               = ' ',
+  ['txt']                = ' '
 }
 
 local function color()
@@ -40,20 +68,32 @@ local function color()
   return mode_color
 end
 
+local function branch()
+  local cmd = io.popen('git branch --show-current 2>/dev/null')
+  local branch = cmd:read("*l") or cmd:read("*a")
+  cmd:close()
+  if branch ~= "" then 
+    return string.format("   " .. branch)
+  else 
+    return ""
+  end
+end
+
 -- StatusLine Modes
 Status = function()
   return table.concat {
     color(), -- mode colors
-    string.format(" %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
+    string.format("  %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
     "%#StatusLine#", -- middle color
-    " %f ", -- file name
+    branch(),
+    -- " %f ", -- file name
     "%=", -- right align
-    " %Y ", -- file type
+    string.format("%s", (icons[vim.bo.filetype] or "")),
+    " %f ",
     color(), -- mode colors
-    " %l:%c ", -- line, column
+    " %l:%c  ", -- line, column
   }
 end
-
 
 -- Execute statusline
 api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
