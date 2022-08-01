@@ -1,13 +1,9 @@
-function hl(highlight, fg, bg)
-  cmd("hi " .. highlight .. " guifg=" .. fg .. " guibg=" .. bg)
-end
-
-function map(mode, keys, command)
+local function map(mode, keys, command)
   api.nvim_set_keymap(mode, keys, command, { noremap = true, silent = true })
 end
 
-active = false
-function minimal()
+local active = false
+function Minimal()
   if active then
     opt.number = true
     opt.showmode = false
@@ -24,7 +20,7 @@ function minimal()
     opt.signcolumn = 'no'
     opt.foldcolumn = '1'
   end
-  active = not active 
+  active = not active
 end
 
 -- Normal Map
@@ -48,7 +44,7 @@ map("n", "<leader>t", ":enew<CR>")
 map("n", "<ESC>", ":nohlsearch<CR>")
 
 -- Minimal toggle
-map("n", "<leader>m", ":lua minimal()<CR>")
+map("n", "<leader>m", ":lua Minimal()<CR>")
 map("n", "<leader>n", ":set relativenumber!<CR>")
 
 -- Hard update

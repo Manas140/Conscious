@@ -14,9 +14,9 @@ local modules = {
   'plugins',
 }
 
-for i, a in ipairs(modules) do
+for _, a in ipairs(modules) do
   local ok, err = pcall(require, a)
-  if not ok then 
+  if not ok then
     error("Error calling " .. a .. err)
   end
 end

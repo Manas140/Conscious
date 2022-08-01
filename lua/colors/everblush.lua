@@ -1,4 +1,4 @@
-return { 
+return {
   base00 = "#141b1e",
   base01 = "#232a2d",
   base02 = "#2d3437",
@@ -14,5 +14,5 @@ return {
   base0C = "#71baf2",
   base0D = "#67cbe7",
   base0E = "#c47fd5",
-  base0F = "#ef7d7d", 
-} 
+  base0F = "#ef7d7d",
+}

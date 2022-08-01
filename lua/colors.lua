@@ -6,7 +6,7 @@ if not present then return end
 local present, color = pcall(require, "colors." .. theme)
 if present then
   base16.setup(color)
-else 
+else
   local ok, err = pcall(cmd, ("colorscheme base16-" .. theme))
   if not ok then
     _G.theme = "paradise-dark"
@@ -68,6 +68,7 @@ hl("CmpItemAbbrMatchFuzzy", color.base05)
 hl("CmpItemAbbr", color.base03)
 hl("CmpItemKind", color.base0E)
 hl("CmpItemMenu", color.base0E)
+hl("CmpItemKindSnippet", color.base0E)
 
 -- Number
 hl("CursorLine")
