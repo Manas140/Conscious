@@ -23,7 +23,7 @@ opt.ruler = false
 opt.laststatus = 2
 opt.number = true
 opt.numberwidth = 1
-opt.relativenumber = false 
+opt.relativenumber = false
 opt.signcolumn = "yes"
 
 -- window, buffer, tabs

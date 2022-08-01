@@ -72,9 +72,9 @@ local function branch()
   local cmd = io.popen('git branch --show-current 2>/dev/null')
   local branch = cmd:read("*l") or cmd:read("*a")
   cmd:close()
-  if branch ~= "" then 
+  if branch ~= "" then
     return string.format("   " .. branch)
-  else 
+  else
     return ""
   end
 end
@@ -98,11 +98,11 @@ end
 -- Execute statusline
 api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
   pattern = "*",
-  command = "setlocal statusline=%!v:lua.Status()", 
+  command = "setlocal statusline=%!v:lua.Status()",
 })
 api.nvim_create_autocmd({"WinLeave", "BufLeave"}, {
   pattern = "*",
-  callback = function() 
+  callback = function()
     opt.statusline = "%#StatusInactive# %f "
   end,
 })

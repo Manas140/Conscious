@@ -1,11 +1,10 @@
-local present, bufferline = pcall(require, "bufferline")
-if not present then
+local ok, bufferline = pcall(require, "bufferline")
+if not ok then
   return
 end
 
-local present, color = pcall(require, "colors." .. _G.theme)
-
-if not present then
+local ok, color = pcall(require, "colors." .. _G.theme)
+if not ok then
   return
 end
 
@@ -54,7 +53,7 @@ bufferline.setup {
       guifg = color.base00,
       guibg = color.base00,
     },
-    
+
     -- modified
     modified = {
       guifg = color.base03,

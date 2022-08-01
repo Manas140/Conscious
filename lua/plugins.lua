@@ -10,18 +10,12 @@ cmd [[ packadd packer.nvim ]]
 require('packer').startup {
   function()
     use 'wbthomason/packer.nvim'
-    
-    -- On buffer stuff
-    use {
-      'numToStr/Comment.nvim',
-      config = function()
-        require('Comment').setup()
-      end
-    }
+
+    -- In Buffer ( Auto )
     use { 
       'norcalli/nvim-colorizer.lua',
-      config = function() 
-        require('colorizer').setup() 
+      config = function()
+        require('colorizer').setup()
       end,
     }
     use {
@@ -37,26 +31,26 @@ require('packer').startup {
         require('plugins.treesitter')
       end
     }
-    
+
     -- UI
     use 'RRethy/nvim-base16'
     use {
       'kyazdani42/nvim-tree.lua',
-      config = function() 
+      config = function()
         require('plugins.nvim-tree')
       end,
     }
     use { 
       'lewis6991/gitsigns.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
-      config = function() 
+      config = function()
         require('plugins.gitsigns')
       end,
     }
     use { 
       'nvim-telescope/telescope.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
-      config = function() 
+      config = function()
         require('plugins.telescope')
       end,
     }
@@ -66,8 +60,8 @@ require('packer').startup {
         require('plugins.bufferline')
       end,
     }
-     
-    -- Completion
+
+    -- Completion, LSP
     use {
       'windwp/nvim-autopairs',
       config = function()
@@ -81,7 +75,21 @@ require('packer').startup {
         require('plugins.cmp')
       end,
     }
-    
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
+    }
+
+    use {
+      'neovim/nvim-lspconfig',
+      requires = { 'hrsh7th/cmp-nvim-lsp', 'williamboman/nvim-lsp-installer' },
+      config = function()
+        require("plugins.lsp")
+      end
+    }
+
     -- Snippets
     use {
       'L3MON4D3/LuaSnip',

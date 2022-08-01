@@ -6,8 +6,36 @@ end
 
 opt.completeopt = 'menuone,noselect'
 
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = ""
+}
+
 cmp.setup({
-  snippet = {      
+  snippet = {
     expand = function(args)
       local present, luasnip = pcall(require, "luasnip")
       if present then
@@ -43,11 +71,14 @@ cmp.setup({
   }),
   formatting = {
     format = function(entry, vim_item)
-      vim_item.kind = "  "
+      vim_item.kind = kind_icons[vim_item.kind]
       vim_item.menu = ({
-        luasnip = "",
-        cmdline = "",
-        buffer = "",
+        -- buffer = "[Buf]",
+        -- path = "[Path]",
+        -- nvim_lsp = "[Lsp]",
+        -- luasnip = "[Snip]",
+        -- cmdline = "[Cmd]",
+        -- nvim_lua = "[Lua]",
       })[entry.source.name]
       return vim_item
     end,
@@ -57,13 +88,14 @@ cmp.setup({
     { name = 'path' },
     { name = 'buffer' },
     { name = 'cmdline' },
+    { name = 'nvim_lsp' },
   }),
   enabled = function()
     local context = require 'cmp.config.context'
-    if vim.api.nvim_get_mode().mode == 'c' then
+    if api.nvim_get_mode().mode == 'c' then
       return true
     else
-      return not context.in_treesitter_capture('comment') 
+      return not context.in_treesitter_capture('comment')
         and not context.in_syntax_group('Comment')
     end
   end
