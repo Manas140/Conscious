@@ -44,7 +44,7 @@ git clone https://github.com/Manas140/Conscious.git $HOME/.config/nvim
 - Install it
 
 ```sh
-nvim +PackerSync
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
 ## Keybinds
