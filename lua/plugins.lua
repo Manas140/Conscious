@@ -1,28 +1,30 @@
-local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  print('Installing Packer')
-  cmd(':!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+local ensure_packer = function()
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
-cmd [[ packadd packer.nvim ]]
+local packer_bootstrap = ensure_packer()
 
-require('packer').startup {
-  function()
+return require('packer').startup {
+  function(use)
     use 'wbthomason/packer.nvim'
-
     -- In Buffer ( Auto )
     use { 
       'norcalli/nvim-colorizer.lua',
       config = function()
         require('colorizer').setup()
-      end,
+      end
     }
     use {
       'lukas-reineke/indent-blankline.nvim',
       config = function()
         require('plugins.indent_blankline')
-      end,
+      end
     }
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -38,27 +40,27 @@ require('packer').startup {
       'kyazdani42/nvim-tree.lua',
       config = function()
         require('plugins.nvim-tree')
-      end,
+      end
     }
     use { 
       'lewis6991/gitsigns.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('plugins.gitsigns')
-      end,
+      end
     }
     use { 
       'nvim-telescope/telescope.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('plugins.telescope')
-      end,
+      end
     }
     use {
       'akinsho/bufferline.nvim',
       config = function()
         require('plugins.bufferline')
-      end,
+      end
     }
 
     -- Completion, LSP
@@ -73,7 +75,7 @@ require('packer').startup {
       requires = { 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline'},
       config = function()
         require('plugins.cmp')
-      end,
+      end
     }
     use {
       'numToStr/Comment.nvim',
@@ -97,8 +99,13 @@ require('packer').startup {
       requires = { 'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets' },
       config = function()
         require('plugins.luasnip')
-      end,
+      end
     }
+
+    if packer_bootstrap then
+      require('packer').sync()
+    end
+
   end,
 
   config = {
@@ -107,6 +114,6 @@ require('packer').startup {
         return require('packer.util').float { border = 'single' }
       end,
       prompt_border = 'single',
-    },
-  },
+    }
+  }
 }
