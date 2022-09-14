@@ -4,6 +4,7 @@ g.mapleader = ' '
 opt.scrolloff = 3
 opt.mouse = 'a'
 opt.title = true
+opt.titlestring = '%f' 
 opt.clipboard = 'unnamedplus'
 opt.swapfile = false
 opt.undofile = true
@@ -15,7 +16,7 @@ opt.cul = true
 -- timeout stuff
 opt.updatetime = 300
 opt.timeout = true
-opt.timeoutlen = 500
+opt.timeoutlen = 1000
 opt.ttimeoutlen = 10
 
 -- status, tab, number, sign line
@@ -32,7 +33,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.hidden = true
 opt.fillchars = {
-  vert = " ",
+  vert = "│",
   eob = " ",
   diff = " ",
   msgsep = " "

@@ -84,7 +84,7 @@ Status = function()
   return table.concat {
     color(), -- mode colors
     string.format("  %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
-    "%#StatusLine#", -- middle color
+    "%#StatusActive#", -- middle color
     branch(),
     -- " %f ", -- file name
     "%=", -- right align
@@ -102,13 +102,9 @@ api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
 })
 api.nvim_create_autocmd({"WinLeave", "BufLeave"}, {
   pattern = "*",
-  callback = function()
-    opt.statusline = "%#StatusInactive# %f "
-  end,
+  command = "setlocal statusline=%#StatusLine#",
 })
-api.nvim_create_autocmd({"WinEnter", "BufEnter", "WinLeave" , "BufLeave", "FileType"}, {
+api.nvim_create_autocmd({"WinLeave", "BufLeave", "WinEnter", "BufEnter", "FileType"}, {
   pattern = {"NvimTree*", "terminal"},
-  callback = function()
-    opt.statusline = "%#StatusLine#"
-  end,
+  command = "setlocal statusline=%#StatusNormal#",
 })

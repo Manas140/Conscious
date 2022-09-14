@@ -4,7 +4,7 @@ cmd = vim.cmd
 opt = vim.opt
 g = vim.g
 
-_G.theme = "paradise-dark"
+_G.theme = "paradise"
 
 local modules = {
   'options',
