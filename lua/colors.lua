@@ -9,7 +9,7 @@ if present then
 else
   local ok, err = pcall(cmd, ("colorscheme base16-" .. theme))
   if not ok then
-    _G.theme = "paradise-dark"
+    _G.theme = "paradise"
     color = require("colors." .. _G.theme)
     base16.setup(color)
     print(err)
@@ -24,10 +24,10 @@ local function hl(highlight, fg, bg)
 end
 
 -- Status Line
-hl("StatusLine")
 hl("StatusNormal")
 hl("StatusLineNC", color.base03)
-hl("StatusInactive", color.base03)
+hl("StatusActive", color.base05)
+hl("StatusLine", color.base02) -- inactive
 hl("StatusReplace", color.base08)
 hl("StatusInsert", color.base0B)
 hl("StatusCommand", color.base0A)
@@ -76,5 +76,9 @@ hl("CursorLineNR")
 hl("LineNr", color.base03)
 
 -- Others
+hl("VertSplit", color.base01, nil)
 hl("NormalFloat", nil, color.base01)
 hl("FloatBorder", color.base01, color.base01)
+
+-- Extra
+cmd("hi StatusLine gui=strikethrough")

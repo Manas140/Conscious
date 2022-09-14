@@ -11,6 +11,7 @@ function Minimal()
     opt.laststatus = 2
     opt.signcolumn = 'yes'
     opt.foldcolumn = '0'
+    cmd(':LspStart')
   else
     opt.number = false
     opt.relativenumber = false
@@ -19,6 +20,7 @@ function Minimal()
     opt.laststatus = 0
     opt.signcolumn = 'no'
     opt.foldcolumn = '1'
+    cmd(':LspStop')
   end
   active = not active
 end
@@ -46,9 +48,6 @@ map("n", "<ESC>", ":nohlsearch<CR>")
 -- Minimal toggle
 map("n", "<leader>m", ":lua Minimal()<CR>")
 map("n", "<leader>n", ":set relativenumber!<CR>")
-
--- Hard update
-map("n", "<leader>u", ":tabnew | term cd $HOME/.config/nvim && git reset --hard HEAD && git pull<CR>")
 
 -- Telescope
 map("n", "<leader><space>", ":Telescope<CR>")
