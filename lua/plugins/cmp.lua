@@ -49,9 +49,8 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
+    ['<Esc>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -87,18 +86,8 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer' },
-    { name = 'cmdline' },
     { name = 'nvim_lsp' },
   }),
-  enabled = function()
-    local context = require 'cmp.config.context'
-    if api.nvim_get_mode().mode == 'c' then
-      return true
-    else
-      return not context.in_treesitter_capture('comment')
-        and not context.in_syntax_group('Comment')
-    end
-  end
 })
 
 cmp.setup.cmdline('/', {
