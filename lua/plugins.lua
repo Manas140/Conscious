@@ -14,7 +14,7 @@ return require('packer').startup {
   function(use)
     use 'wbthomason/packer.nvim'
     -- In Buffer ( Auto )
-    use { 
+    use {
       'norcalli/nvim-colorizer.lua',
       config = function()
         require('colorizer').setup()
@@ -42,14 +42,14 @@ return require('packer').startup {
         require('plugins.nvim-tree')
       end
     }
-    use { 
+    use {
       'lewis6991/gitsigns.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('plugins.gitsigns')
       end
     }
-    use { 
+    use {
       'nvim-telescope/telescope.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
       config = function()

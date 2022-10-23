@@ -35,9 +35,9 @@ hl("StatusVisual", color.base0D)
 hl("StatusTerminal", color.base0E)
 
 -- Nvim Tree
-hl("NvimTreeFolderName")
-hl("NvimTreeOpenedFolderName")
-hl("NvimTreeEmptyFolderName")
+hl("NvimTreeFolderName", color.base05)
+hl("NvimTreeOpenedFolderName", color.base05)
+hl("NvimTreeEmptyFolderName", color.base05)
 hl("NvimTreeFolderIcon", color.base03)
 hl("NvimTreeGitDirty", color.base08)
 hl("NvimTreeGitNew", color.base0B)
