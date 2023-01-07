@@ -22,7 +22,16 @@ for _, a in ipairs(modules) do
 end
 
 -- Auto commands
-api.nvim_create_autocmd("TermOpen", {
+api.nvim_create_autocmd({"TermOpen", "TermEnter"}, {
   pattern = "term://*",
   command = "setlocal nonumber norelativenumber signcolumn=no | setfiletype terminal",
+})
+
+api.nvim_create_autocmd("BufEnter", {
+  pattern = "term://*",
+  command = "startinsert"
+})
+
+api.nvim_create_autocmd("VimLeave", {
+  command = "set guicursor=a:ver20",
 })

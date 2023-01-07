@@ -66,7 +66,6 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
   | f + f          | Open telescope find_files         |
   | Control + n    | Toggle Nvim tree                  |
   | Control + b    | Focus Nvim tree                   |
-  | Space + h      | Hard Update                       |
 
 ## Special Thanks
 - [Mangeshrex](https://github.com/Mangeshrex)

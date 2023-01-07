@@ -9,7 +9,6 @@ function Minimal()
     opt.showmode = false
     opt.showtabline = 2
     opt.laststatus = 2
-    opt.signcolumn = 'yes'
     opt.foldcolumn = '0'
     cmd(':LspStart')
   else
@@ -18,8 +17,7 @@ function Minimal()
     opt.showmode = true
     opt.showtabline = 0
     opt.laststatus = 0
-    opt.signcolumn = 'no'
-    opt.foldcolumn = '1'
+    opt.foldcolumn = '2'
     cmd(':LspStop')
   end
   active = not active
