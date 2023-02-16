@@ -4,6 +4,7 @@ end
 
 local active = false
 function Minimal()
+  local opt = vim.o
   if active then
     opt.number = true
     opt.showmode = false

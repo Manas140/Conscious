@@ -85,8 +85,8 @@ return require('packer').startup {
     }
 
     use {
-      'neovim/nvim-lspconfig',
-      requires = { 'hrsh7th/cmp-nvim-lsp', 'williamboman/nvim-lsp-installer' },
+      'williamboman/mason.nvim',
+      requires = { 'hrsh7th/cmp-nvim-lsp', 'neovim/nvim-lspconfig.nvim', 'williamboman/mason-lspconfig.nvim' },
       config = function()
         require("plugins.lsp")
       end
