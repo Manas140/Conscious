@@ -1,18 +1,12 @@
+local ok, mason = pcall(require, 'mason')
+if not ok then
+  return
+end
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local ok, lsp = pcall(require, 'lspconfig')
-if not ok then
-  return
-end
-
-local ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
-if not ok then
-  return
-end
-
-lsp_installer.setup {
-  automatic_installation = true,
+mason.setup {
   ui = {
     icons = {
       server_installed = "✓",
@@ -23,12 +17,17 @@ lsp_installer.setup {
 }
 
 local servers = {
-  "sumneko_lua",
+  "lua_ls",
   "pyright",
 }
 
+require('mason-lspconfig').setup {
+  ensure_installed = servers,
+  automatic_installation = true,
+}
+
 for _, a in ipairs(servers) do
-  lsp[a].setup {
+  require('lspconfig')[a].setup {
     capabilities = capabilities
   }
 end
