@@ -19,6 +19,7 @@ mason.setup {
 local servers = {
   "lua_ls",
   "pyright",
+  "denols"
 }
 
 require('mason-lspconfig').setup {
