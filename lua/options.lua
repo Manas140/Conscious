@@ -21,7 +21,7 @@ opt.ttimeoutlen = 10
 
 -- status, tab, number, sign line
 opt.ruler = false
-opt.laststatus = 2
+opt.laststatus = 3
 opt.number = true
 opt.numberwidth = 1
 opt.relativenumber = false
@@ -33,7 +33,6 @@ opt.splitbelow = true
 opt.splitright = true
 opt.hidden = true
 opt.fillchars = {
-  vert = "│",
   eob = " ",
   diff = " ",
   msgsep = " "

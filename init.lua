@@ -24,7 +24,7 @@ end
 -- Auto commands
 api.nvim_create_autocmd({"TermOpen", "TermEnter"}, {
   pattern = "term://*",
-  command = "setlocal nonumber norelativenumber signcolumn=no | setfiletype terminal",
+  command = "setlocal nonumber norelativenumber signcolumn=no | setfiletype term",
 })
 
 api.nvim_create_autocmd("BufEnter", {
