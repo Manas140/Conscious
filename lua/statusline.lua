@@ -46,6 +46,7 @@ local icons = {
   ['conf']               = ' ',
   ['haskel']             = ' ',
   ['ruby']               = ' ',
+  ['term']               = ' ',
   ['txt']                = ' '
 }
 
@@ -86,7 +87,6 @@ Status = function()
     string.format("  %s ", modes[api.nvim_get_mode().mode]):upper(), -- mode
     "%#StatusActive#", -- middle color
     branch(),
-    -- " %f ", -- file name
     "%=", -- right align
     string.format("%s", (icons[vim.bo.filetype] or "")),
     " %f ",
@@ -99,12 +99,4 @@ end
 api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
   pattern = "*",
   command = "setlocal statusline=%!v:lua.Status()",
-})
-api.nvim_create_autocmd({"WinLeave", "BufLeave"}, {
-  pattern = "*",
-  command = "setlocal statusline=%#StatusLine#",
-})
-api.nvim_create_autocmd({"WinLeave", "BufLeave", "WinEnter", "BufEnter", "FileType"}, {
-  pattern = {"NvimTree*", "terminal"},
-  command = "setlocal statusline=%#StatusNormal#",
 })
