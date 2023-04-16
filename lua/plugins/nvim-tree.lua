@@ -8,12 +8,12 @@ nvim_tree.setup {
   view = {
     width = 30,
     side = "left",
-    hide_root_folder = true,
   },
   disable_netrw = true,
   hijack_cursor = true,
   update_cwd = true,
   renderer = {
+    root_folder_label = false,
     indent_markers = {
       enable = true,
     },
