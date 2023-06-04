@@ -11,5 +11,6 @@ gitsigns.setup {
     delete = { hl = "DiffDelete", text = "│", numhl = "GitSignsDeleteNr" },
     topdelete = { hl = "DiffDelete", text = "│", numhl = "GitSignsDeleteNr" },
     changedelete = { hl = "DiffChangeDelete", text = "│", numhl = "GitSignsChangeNr" },
+    untracked = { hl = "Comment", text = "│", numhl = "GitSignsChangeNr" },
   },
 }

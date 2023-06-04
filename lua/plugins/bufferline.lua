@@ -10,7 +10,7 @@ end
 
 bufferline.setup {
   options = {
-    offsets = { { filetype = "NvimTree", text = "" } },
+    offsets = { { filetype = "NvimTree", text = "Explorer", highlight = "Normal"  } },
     separator_style = { "", ""},
     show_tab_indicators = false,
   },

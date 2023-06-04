@@ -20,6 +20,7 @@
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [lazy](https://github.com/folke/lazy.nvim)
 - [mason](https://github.com/williamboman/mason.nvim)
 - [mason-lspconfig](https://github.com/williamboman/mason.nvim)
 - [nvim-base16](https://github.com/RRethy/nvim-base16)
@@ -27,11 +28,16 @@
 - [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)
-- [packer](https://github.com/wbthomason/packer.nvim)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## Setup
+
+- [ for old users ] - Recently switched from 'packer' to 'lazy', therefore run 
+  ```
+    rm -rf ~/.local/share/nvim/site/
+  ```
+
 - Make a backup of previous config
 
 ```sh
@@ -67,6 +73,9 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
   | f + f          | Open telescope find_files         |
   | Control + n    | Toggle Nvim tree                  |
   | Control + b    | Focus Nvim tree                   |
+
+## Reference 
+- [Kodo](https://github.com/chadcat7/kodo) ... Bufferline
 
 ## Special Thanks
 - [Mangeshrex](https://github.com/Mangeshrex)

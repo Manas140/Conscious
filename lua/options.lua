@@ -22,6 +22,7 @@ opt.ttimeoutlen = 10
 -- status, tab, number, sign line
 opt.ruler = false
 opt.laststatus = 3
+opt.showtabline = 2
 opt.number = true
 opt.numberwidth = 1
 opt.relativenumber = false
