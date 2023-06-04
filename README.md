@@ -48,11 +48,6 @@
 ```sh
 git clone https://github.com/Manas140/Conscious.git $HOME/.config/nvim
 ```
-- Install it
-
-```sh
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-```
 
 ## Keybinds
 
@@ -75,7 +70,7 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
   | Control + b    | Focus Nvim tree                   |
 
 ## Reference 
-- [Kodo](https://github.com/chadcat7/kodo) ... Bufferline
+- [Kodo](https://github.com/chadcat7/kodo) ... Bufferline [WIP]
 
 ## Special Thanks
 - [Mangeshrex](https://github.com/Mangeshrex)
