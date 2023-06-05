@@ -25,31 +25,6 @@ local modes = {
   ['R']   = ' ',
 }
 
-local icons = {
-  ['typescript']         = ' ' ,
-  ['python']             = ' ' ,
-  ['java']               = ' ' ,
-  ['html']               = ' ' ,
-  ['css']                = ' ' ,
-  ['scss']               = ' ' ,
-  ['javascript']         = ' ' ,
-  ['javascriptreact']    = ' ' ,
-  ['markdown']           = ' ' ,
-  ['sh']                 = ' ',
-  ['zsh']                = ' ',
-  ['vim']                = ' ',
-  ['rust']               = ' ',
-  ['cpp']                = ' ',
-  ['c']                  = ' ',
-  ['go']                 = ' ',
-  ['lua']                = ' ',
-  ['conf']               = ' ',
-  ['haskel']             = ' ',
-  ['ruby']               = ' ',
-  ['term']               = ' ',
-  ['txt']                = ' '
-}
-
 local function color()
   local mode = api.nvim_get_mode().mode
   local mode_color = "%#StatusLine#"
@@ -80,6 +55,20 @@ local function branch()
   end
 end
 
+function file_name()
+    local file = vim.fn.expand("%:t")
+    if vim.fn.empty(file) == 1 then
+        return ""
+    end
+    local icon = require("nvim-web-devicons").get_icon(
+        vim.fn.expand("%:e"),
+        vim.fn.expand("%:t"),
+        { default = true }
+    )
+    return icon .. " " .. file .. " "
+end
+
+
 -- StatusLine Modes
 Status = function()
   return table.concat {
@@ -88,8 +77,7 @@ Status = function()
     "%#StatusActive#", -- middle color
     branch(),
     "%=", -- right align
-    string.format("%s", (icons[vim.bo.filetype] or "")),
-    " %f ",
+    file_name(),
     color(), -- mode colors
     " %l:%c  ", -- line, column
   }
