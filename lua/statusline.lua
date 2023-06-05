@@ -55,7 +55,7 @@ local function branch()
   end
 end
 
-function file_name()
+local function file_name()
     local file = vim.fn.expand("%:t")
     if vim.fn.empty(file) == 1 then
         return ""
