@@ -37,6 +37,7 @@ require("lazy").setup({
   'RRethy/nvim-base16',
   {
     'kyazdani42/nvim-tree.lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('plugins.nvim-tree')
     end
