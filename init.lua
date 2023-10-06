@@ -10,7 +10,6 @@ local modules = {
   'options',
   'mappings',
   'statusline',
-  -- 'bufline',
   'plugins',
   'colors',
 }

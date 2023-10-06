@@ -69,8 +69,5 @@ git clone https://github.com/Manas140/Conscious.git $HOME/.config/nvim
   | Control + n    | Toggle Nvim tree                  |
   | Control + b    | Focus Nvim tree                   |
 
-## Reference 
-- [Kodo](https://github.com/chadcat7/kodo) ... Bufferline [WIP]
-
 ## Special Thanks
 - [Mangeshrex](https://github.com/Mangeshrex)
