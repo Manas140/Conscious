@@ -1,18 +1,22 @@
-local present, indent_blankline = pcall(require, "indent_blankline")
+local present, ibl = pcall(require, "ibl")
 
 if not present then
   return
 end
 
-indent_blankline.setup {
-  filetype_exclude = {
-    "help",
-    "terminal",
-    "dashboard",
-    "packer",
-    "TelescopePrompt",
-    "TelescopeResults",
-    "",
+ibl.setup {
+  indent = { char="│" },
+  exclude = {
+    filetypes = {
+      "help",
+      "terminal",
+      "dashboard",
+      "packer",
+      "TelescopePrompt",
+      "TelescopeResults",
+      "",
+    },
+    buftypes = { "terminal", "nofile" },
   },
-  buftype_exclude = { "terminal", "nofile" },
+  scope= { enabled = false }
 }
