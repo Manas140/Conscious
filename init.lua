@@ -11,8 +11,8 @@ local modules = {
   'mappings',
   'statusline',
   -- 'bufline',
-  'colors',
   'plugins',
+  'colors',
 }
 
 for _, a in ipairs(modules) do
