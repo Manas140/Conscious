@@ -1,10 +1,7 @@
 local theme = _G.theme
 
 local present, base16 = pcall(require, "base16-colorscheme")
-if not present then
-    vim.notify("Colorscheme not loaded")
-    return
-end
+if not present then return end
 
 local present, color = pcall(require, "colors." .. theme)
 if present then
